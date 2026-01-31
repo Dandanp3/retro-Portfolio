@@ -15,7 +15,7 @@ const pressStart2P = Press_Start_2P({
 })
 
 export const metadata: Metadata = {
-  title: "Daniel | Portfolio - Desenvolvedor Back",
+  title: "Daniel | Portfolio",
   description: "Portfolio pessoal de Daniel - Desenvolvedor Backend",
   icons: {
     icon: [
