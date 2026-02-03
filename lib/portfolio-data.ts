@@ -1,5 +1,5 @@
 export const HERO = {
     greeting: "Olá, eu sou o Daniel",
-    subtitle: "Desenvolvedor focado em Back",
+    subtitle: "Desenvolvedor Back",
     cta: "Ver Projetos" 
 }

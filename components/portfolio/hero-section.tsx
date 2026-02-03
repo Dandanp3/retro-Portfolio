@@ -78,6 +78,38 @@ export function HeroSection() {
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-pixel text-foreground mb-6 leading-relaxed neon-text-pink">
             {HERO.greeting}
           </h1>
+
+          {/* Subtitle */}
+          <motion.div
+            className="relative h-16 md:h-20 flex items-center justify-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5 }}
+          >
+            <p className="text-lg md:text-xl text-muted-foreground mx-auto leading-relaxed">
+              {HERO.subtitle}
+            </p>
+          </motion.div>
+
+          {/* Line */}
+          <motion.div>
+            <motion.button
+              onClick={scrollToProjects}
+              className="group relative px-8 py-4 bg-transparent border-2 border-neon-pink font-pixel text-sm transition-all duration-300 hover:bg-neon-pink hover:text-background overflow-hidden"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              initial={{ opacity: 0, y:20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.9 }}
+            >
+              <span className="relative z-10">{HERO.cta}</span>
+              <motion.div
+                className="absolute inset-0 bg-neon-pink opacity-0 group-hover:opacity-100 transition-opacity"
+                initial={false}
+              />
+            </motion.button>
+          </motion.div>
+
         </motion.div>
       </div>
     </section>
