@@ -48,7 +48,7 @@ export function HeroSection() {
         </motion.div>
         <motion.div
           className="absolute -top-10 -right-10 text-neon-cyan opacity-30"
-          animate={{y: [0, 10, 10], rotate: [0, -5, 0] }}
+          animate={{y: [0, 10, 0], rotate: [0, -5, 0] }}
           transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY}}
         >
           <Code size={50} />
