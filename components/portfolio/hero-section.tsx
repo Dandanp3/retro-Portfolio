@@ -92,7 +92,14 @@ export function HeroSection() {
           </motion.div>
 
           {/* Line */}
-          <motion.div>
+          <motion.div
+            className="w-32 h-1 bg-gradient-to-r from-neon-pink via-neon-cyan to-neon-green mx-auto my-8"
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1}}
+            transition={{ delay: 0.7, duration: 0.5}}
+          />
+
+            {/* CTA BUTTON */}
             <motion.button
               onClick={scrollToProjects}
               className="group relative px-8 py-4 bg-transparent border-2 border-neon-pink font-pixel text-sm transition-all duration-300 hover:bg-neon-pink hover:text-background overflow-hidden"
@@ -110,8 +117,21 @@ export function HeroSection() {
             </motion.button>
           </motion.div>
 
-        </motion.div>
+          {/* Scroll Indicator*/}
+          <motion.div
+            className="absolute bottom-10 left-1/2 -translate-x-1/2"
+            animate={{ y: [0, 10, 0] }}
+            transition={{ duration: 1.5, repeat: Number.POSITIVE_INFINITY}}
+          >
+            <ChevronDown className="text-neon-cyan w-8 h-8"/>
+          </motion.div>
       </div>
+
+      {/* Decorations*/}
+      <div className="absolute top-4 left-4 w-20 h-20 border-l-2 border-t-2 border-neon-pink opacity-50"/>
+      <div className="absolute top-4 right-4 w-20 h-20 border-r-2 border-t-2 border-neon-cyan opacity-50"/>
+      <div className="absolute bottom-4 left-4 w-20 h-20 border-l-2 border-b-2 border-neon-green opacity-50"/>
+      <div className="absolute bottom-4 right-4 w-20 h-20 border-r-2 border-b-2 border-neon-yellow opacity-50"/>
     </section>
   )
 }
