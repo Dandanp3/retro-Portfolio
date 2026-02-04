@@ -2,6 +2,7 @@
 
 import { AboutSection } from "@/components/portfolio/about-section"
 import { HeroSection } from "@/components/portfolio/hero-section"
+import  { ScrollProgress } from "@/components/portfolio/scroll-progress"
 
 export default function PortfolioPage() {
   return (
@@ -11,6 +12,8 @@ export default function PortfolioPage() {
 
       {/* Scanlines */}
       <div className="fixed inset-0 scanlines pointer-events-none opacity-30"/>
+
+      <ScrollProgress/>
 
       {/* Sections */}
       <HeroSection />
