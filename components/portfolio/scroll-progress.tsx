@@ -48,7 +48,7 @@ export function ScrollProgress() {
 
                 {/* Glow Effect */}
                 <motion.div
-                    className="absolute bottom-0 left-0 right-0  pointer-events-none"
+                    className="absolute top-0 left-0 right-0  pointer-events-none"
                     style={{  
                         height: `${percentage}%`,
                         boxShadow: "0 0 10px var(--neon-cyan), 0 0 20px var(--neon-cyan), inset 0 0 10px var(--neon-cyan)",
