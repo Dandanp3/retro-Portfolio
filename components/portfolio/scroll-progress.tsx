@@ -62,9 +62,89 @@ export function ScrollProgress() {
             </div>
 
             {/* Percentage Display  */}
-            <motion.div>
+            <motion.div
+                className="font-pixel text-xs text-neon-green"
+                key={percentage}
+                initial={{ scale: 1.3 }}
+                animate={{ scale: 1 }}
+                transition={{ duration: 0.3 }}
+            >
                 {percentage}%
             </motion.div>
+
+            {/* Pokeball Icon */}
+            <div className="relative w-8 h-8">
+                <svg viewBox="0 0 32 32" className="w-full h-full">
+                    {/* Circle */}
+                    <circle
+                    cx="16"
+                    cy="16"
+                    r="14"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    className="text-neon-pink"
+                    />
+                    {/* Half top */}
+                    <path
+                        d="M 2 16 A 14 14 0 0 1 30 16"
+                        fill="var(--neon-pink)"
+                        opacity="0.3"
+                    />
+                    {/* Half Bottom */}
+                    <path
+                        d="M 2 16 A 14 14 0 0 0 30 16"
+                        fill="var(--neon-cyan)"
+                        opacity="0.3"
+                    />
+                    {/* Center Line */}
+                    <line
+                        x1="2"
+                        y1="16"
+                        x2="30"
+                        y2="16"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        className="text-foreground"
+                    />
+                    {/* Center Button */}
+                    <circle
+                        cx="16"
+                        cy="16"
+                        r="4"
+                        fill="var(--background)"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        className="text-foreground"
+                    />
+                    {/* Glow Based on Progress */}
+                    <motion.circle
+                        cx="16"
+                        cy="16"
+                        r="2"
+                        className="text-neon-green"
+                        initial={{ fill: "transparent "}}
+                        animate={{ 
+                            fill: percentage > 50 ? "var(--neon-green)" : "transparent",
+                        }}
+                    />
+                </svg>
+
+                {/* Glow Animation */}
+                {percentage > 75 && (
+                    <motion.div
+                        className="absolute inset-0 rounded-full"
+                        animate={{ 
+                            boxShadow: [
+                                "0 0 0px var(--neon-green)",
+                                "0 0 15px var(--neon-green)",
+                                "0 0 0px var(--neon-green)",
+                            ],
+                        }}
+                        transition={{ duration: 1, repeat: Number.POSITIVE_INFINITY }}
+                    />
+                )}
+            </div>
         </motion.div>
     )
 }
