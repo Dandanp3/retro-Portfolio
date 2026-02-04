@@ -3,6 +3,7 @@
 import { AboutSection } from "@/components/portfolio/about-section"
 import { HeroSection } from "@/components/portfolio/hero-section"
 import  { ScrollProgress } from "@/components/portfolio/scroll-progress"
+import { SkillsSection } from "@/components/portfolio/skills-section"
 
 export default function PortfolioPage() {
   return (
@@ -18,6 +19,7 @@ export default function PortfolioPage() {
       {/* Sections */}
       <HeroSection />
       <AboutSection/>
+      <SkillsSection/>
 
 
 
