@@ -38,8 +38,43 @@ export function AboutSection() {
                             <div className="w-3 h-3 rounded-full bg-red-500"/>
                             <div className="w-3 h-3 rounded-full bg-yellow-500"/>
                             <div className="w-3 h-3 rounded-full bg-green-500"/>
-                            <span>about.txt</span>
+                            <span className="ml-4 text-muted-foreground text-sm font-mono">about.txt</span>
                         </div>
+
+                        {/* Icons */}
+                        <div className="flex justify-center gap-8 mb-8">
+                            <motion.div
+                                whileHover={{ scale: 1.2, rotate: 10 }}
+                                className="p-3 rounded-lg bg-secondary"
+                            >
+                                <Gamepad2 className="w-8 h-8 text-neon-pink"/>
+                            </motion.div>
+
+                            <motion.div
+                                whileHover={{ scale: 1.2, rotate: -10 }}
+                                className="p-3 rounded-lg bg-secondary"
+                            >
+                                <Code2 className="w-8 h-8 text-neon-cyan"/>
+                            </motion.div>
+
+                            <motion.div
+                                whileHover={{ scale: 1.2, rotate: 10 }}
+                                className="p-3 rounded-lg bg-secondary"
+                            > 
+                                <Terminal className="w-8 h-8 text-neon-green"/>
+                            </motion.div>
+                        </div>
+
+                        {/* About Text*/}
+                        <p className="text-foreground leading-relaxed text-center text-lg">
+                            {ABOUT_TEXT}
+                        </p>
+
+                        {/* Decorative Corners */}
+                        <div className="absolute top-2 left-2 w-4 h-4 border-l-2 border-t-2 border-neon-pink"/>
+                        <div className="absolute top-2 right-2 w-4 h-4 border-r-2 border-t-2 border-neon-cyan"/>
+                        <div className="absolute bottom-2 left-2 w-4 h-4 border-l-2 border-b-2 border-neon-green"/>
+                        <div className="absolute bottom-2 right-2 w-4 h-4 border-r-2 border-b-2 border-neon-green"/>
                     </div>
 
                 </motion.div>
