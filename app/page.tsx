@@ -1,5 +1,6 @@
 "use client"
 
+import { AboutSection } from "@/components/portfolio/about-section"
 import { HeroSection } from "@/components/portfolio/hero-section"
 
 export default function PortfolioPage() {
@@ -13,6 +14,7 @@ export default function PortfolioPage() {
 
       {/* Sections */}
       <HeroSection />
+      <AboutSection/>
 
 
 
