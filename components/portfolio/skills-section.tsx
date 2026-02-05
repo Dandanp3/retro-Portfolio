@@ -49,7 +49,7 @@ const SkillIcon = ({ name }: { name: string }) => {
       
     case "luau":
     case "roblox":
-      return <SiRoblox className={iconClass} color="#000000" />; // Ou use a cor da sua preferência
+      return <SiRoblox className={iconClass} color="#1ad1ff" />; 
       
     default:
       return (
@@ -83,10 +83,63 @@ export function SkillsSection() {
     return (
         <section id="skills" className="py-20 px-4 relative">
             <div className="max-w-6xl mx-auto" ref={ref}>
-                <motion.div>
-                    <h2>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={isInView ? { opacity: 1, y: 0} : {}}
+                >
+                    <h2 className="text-2xl md:text-3xl font-pixel text-neon-green mb-4">
                         {"// STACK DE SKILLS"}
                     </h2>
+                    <div className="w-24 h-1 bg-gradient-to-r from-transparent via-neon-green to-transparent mx-auto"/>
+                </motion.div>
+
+                {/* Skills Grid */}
+                <motion.div>
+                  {SKILLS.map((skill) => (
+                    <motion.div
+                      key={skill.name}
+                      variants={itemVariants}
+                      className="relative group"
+                      onMouseEnter={() => setHoveredSkill(skill.name)}
+                      onMouseLeave={() => setHoveredSkill(null)}
+                    >
+                      {/* Glow Effect */}
+                      <motion.div
+                        className="absolute -inset-0.5 bg-gradient-to-r from-neon-pink to-neon-cyan rounded-lg opacity-0 group-hover:opacity-50 blur transition-opacity duration-300"
+                        animate={hoveredSkill === skill.name ? { opacity: 0.5} : { opacity: 0 }}
+                      />
+
+                      {/* CARD */}
+                      <motion.div>
+                        {/* Icon */}
+                        <div className="transition-transform duration-300 group-hover:scale-110">
+                          <SkillIcon name={skill.icon} />
+                        </div>
+
+                        {/* Name */}
+                        <span>
+                          {skill.name}
+                        </span>
+
+                        {/* Level Bar */}
+                        <div>
+                          <motion.div
+                          
+                          />
+                        </div>
+
+                        {/* Level Text */}
+                        <span>
+                          LVL {skill.level}
+                        </span>
+
+                        {/* Tooltip */}
+                        <motion.div>
+                          {skill.description}
+                        </motion.div>
+                      </motion.div>
+                    </motion.div>
+                  ))}
                 </motion.div>
             </div>
         </section>
