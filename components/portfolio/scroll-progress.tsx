@@ -209,7 +209,21 @@ export function ScrollProgress() {
                                 ))}
                             </div>
                         )}
+                    </motion.div>
 
+                    {/* Percentage */}
+                    <motion.div
+                        className="font-mono"
+                        animate={{
+                            color: isComplete ? "var(--neon-green)" : "var(--neon-cyan)",
+                            scale: isComplete ? [1, 1.3, 1] : 1,
+                            textShadow: isComplete
+                                ? "0 0 10px var(--neon-green)"
+                                : "0 0 5px var(--neon-cyan)",
+                        }}
+                        transition={{ duration: 0.5 }}
+                    >
+                        {Math.round(scrollProgress)}%
                     </motion.div>
                 </motion.div>
             )}
