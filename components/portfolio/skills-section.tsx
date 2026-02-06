@@ -110,14 +110,18 @@ export function SkillsSection() {
                       />
 
                       {/* CARD */}
-                      <motion.div>
+                      <motion.div
+                        className="relative bg-card border border-border rounded-lg p-4 flex flex-col items-center gap-3 h-full"
+                        whileHover={{ scale: 1.05, y: -5 }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                      >
                         {/* Icon */}
                         <div className="transition-transform duration-300 group-hover:scale-110">
                           <SkillIcon name={skill.icon} />
                         </div>
 
                         {/* Name */}
-                        <span>
+                        <span className="text-foreground text-sm font-medium text-center">
                           {skill.name}
                         </span>
 
