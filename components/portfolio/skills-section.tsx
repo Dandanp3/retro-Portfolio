@@ -94,7 +94,12 @@ export function SkillsSection() {
                 </motion.div>
 
                 {/* Skills Grid */}
-                <motion.div>
+                <motion.div
+                  className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4"
+                  variants={containerVariants}
+                  initial="hidden"
+                  animate={isInView ? "visible" : "hidden"}
+                >
                   {SKILLS.map((skill) => (
                     <motion.div
                       key={skill.name}
@@ -126,20 +131,26 @@ export function SkillsSection() {
                         </span>
 
                         {/* Level Bar */}
-                        <div>
+                        <div className="w-full h-2 bg-secondary rounded-full overflow-hidden">
                           <motion.div
-                          
+                            className="w-full bg-gradient-to-r from-neon-green to-neon-cyan" 
+                            initial={{ width: 0 }}
+                            animate={isInView ? { width: `${skill.level}%` } : { width: 0 }}
+                            transition={{ delay: 0.5, duration: 1, ease: "easeOut" }}
                           />
                         </div>
 
                         {/* Level Text */}
-                        <span>
+                        <span className="text-xs text-muted-foreground">
                           LVL {skill.level}
                         </span>
 
                         {/* Tooltip */}
-                        <motion.div>
+                        <motion.div
+                          className="absolute -top-12 left-1/2 -translate-x-1/2 bg-background border border-neon-cyan px-3 py-1 rounded text-xs text-neon-cyan whitespace-nowrap pointer-events-none"
+                        >
                           {skill.description}
+                          <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-neon-cyan"/>
                         </motion.div>
                       </motion.div>
                     </motion.div>
